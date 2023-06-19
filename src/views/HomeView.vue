@@ -5,7 +5,6 @@ import TheWelcome from '../components/TheWelcome.vue'
 <template>
   <main>
     <TheWelcome />
-    <router-link to="/products">Ver Produtos</router-link>
-
+    
   </main>
 </template>
