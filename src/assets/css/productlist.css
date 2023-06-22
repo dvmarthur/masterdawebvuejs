@@ -2,9 +2,9 @@ main {
   justify-content: center;
 }
 
-.container-fluid{
-  background-color: #45a049;
-  width: 200%!important;
+.container{
+  background-color: #C576F6;
+  text-align: center;
 }
 h3 {
   font-size: 16px;
@@ -31,7 +31,9 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
+
 
 .product-info {
   display: flex;
@@ -58,6 +60,7 @@ text-align: center;
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
+  margin-right: 10%;
 }
 
 .add-to-cart-btn:hover {
@@ -91,7 +94,7 @@ text-align: center;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+  margin-left: 3%;
 }
 
 .remove-btn:hover {
@@ -104,5 +107,29 @@ text-align: center;
 
 .quantity {
   font-size: 16px;
-  color: #888;
+  color: rgb(0, 0, 0);
+}
+.text-center {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  font-size: 1.5rem;
+  padding: 10px 30px;
+}
+
+.pedido-alerta {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 300px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-color: #d6e9c6;
 }

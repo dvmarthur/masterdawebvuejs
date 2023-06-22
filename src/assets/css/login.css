@@ -1,0 +1,46 @@
+.form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+    border: none;
+    color: #333;
+  }
+  
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn-primary .bi {
+    font-size: 1.2rem;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Estilos personalizados podem ser adicionados aqui */
+  
+  @media (max-width: 576px) {
+    .mt-5 {
+      margin-top: 50%;
+    }
+  }

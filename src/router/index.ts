@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductList from '../components/ProductList.vue'
+import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
+
+
 
 
 const router = createRouter({
@@ -9,22 +13,40 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Login,
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
+    
     {
       path: '/products',
       name: 'ProductList',
-      component: () => import('../views/ProductListView.vue')
-    }
-  ]
-})
+      component: () => import('../views/ProductListView.vue'),
+      meta: { requiresAuth: true }, // Indica que essa rota requer autenticação
 
-export default router
+
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
+    },
+    
+  ]
+});
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = localStorage.getItem('token'); // Verifica se o token existe no Local Storage
+
+  if (requiresAuth && !isAuthenticated) {
+    next('/login'); // Redireciona para a página de login
+  } else {
+    next(); // Continua a navegação normalmente
+  }
+});
+
+
+export default router;
