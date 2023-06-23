@@ -37,7 +37,15 @@
   .btn-primary .bi {
     font-size: 1.2rem;
   }
-  
+  #name{
+    margin: 2%;
+  }
+  #email{
+    margin: 2%;
+  }
+  #password{
+    margin: 3px;
+  }
   .btn-block {
     display: block;
     width: 100%;

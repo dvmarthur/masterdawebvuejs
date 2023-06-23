@@ -7,16 +7,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['product'],
-  methods: {
-    addToCart() {
-      this.$emit('add-to-cart', this.product);
-    }
-  }
-};
-</script>
+<script src="@/js/Product.js"></script>
+
 
 <style scoped>
 @import '@/assets/css/productlist.css';
