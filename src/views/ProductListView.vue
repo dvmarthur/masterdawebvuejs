@@ -9,11 +9,3 @@ import ProductList from '../components/ProductList.vue'
   </main>
     </div>
 </template>
-
-<style>
-.productlistcss {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
