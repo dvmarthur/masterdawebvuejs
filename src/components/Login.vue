@@ -1,7 +1,8 @@
 <template>
+    <h1 class="mb-5 text-center">Login</h1>
   <form @submit="submitForm" class="mt-5">
     <div class="form-group">
-      <input type="email" v-model="email" class="form-control form-control-lg" placeholder="Email" />
+      <input type="email" v-model="email" class="form-control form-control-lg  mt-5" placeholder="Email" />
     </div>
     <div class="form-group">
       <input type="password" v-model="password" class="form-control form-control-lg" placeholder="Password" />
@@ -17,41 +18,5 @@
 
 </style>
 
-<script>
-import axios from 'axios';
-import Swal from 'sweetalert2';
+<script src="@/js/Login.js"></script>
 
-export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-    };
-  },
-  methods: {
-    submitForm(event) {
-      event.preventDefault();
-
-      axios
-        .post('http://127.0.0.1:8000/api/login', {
-          email: this.email,
-          password: this.password,
-        })
-        .then(response => {
-          const token = response.data.token;
-          localStorage.setItem('token', token);
-
-          Swal.fire('Logado com sucesso', '', 'success').then(() => {
-            window.location.href = '/products';
-          });
-        })
-        .catch(error => {
-          Swal.fire('Error ao logar', '', 'error').then(() => {
-            window.location.href = '/login';
-          });
-          // Trate erros de login
-        });
-    },
-  },
-};
-</script>
