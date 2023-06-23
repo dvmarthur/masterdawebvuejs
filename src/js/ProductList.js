@@ -92,7 +92,9 @@ export default {
           console.log(response.data);
           this.cartItems = [];
           this.pedidoFechado = true;
-          Swal.fire('Pedido fechado!', '', 'success');
+          Swal.fire('Pedido fechado', '', 'success').then(() => {
+            window.location.href = '/products';
+          });
         })
         .catch(error => {
           console.error(error);
